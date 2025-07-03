@@ -1,0 +1,2603 @@
+/* --- CSS Variables: Colores y Fuentes Cósmico Neón --- */
+:root {
+    /* Paleta de colores cósmica con toques neón */
+    --cosmic-bg-dark: #030014; /* Fondo negro profundo del espacio */
+    --cosmic-star-white: #FFFFFF; /* Blanco brillante de las estrellas */
+    --cosmic-nebula-purple: #A78CD7; /* Púrpura nebulosa suave */
+    --cosmic-nebula-cyan: #8EE8FA; /* Cian nebulosa etéreo */
+    --cosmic-ring-orange: #F7B267; /* Naranja de anillos planetarios */
+    --cosmic-neon-pink: #FF69B4; /* Rosa neón cósmico */
+    --cosmic-text-light: #F5F5F5; /* Texto claro sobre fondo oscuro */
+    --cosmic-accent-glow: rgba(173, 216, 230, 0.3); /* Brillo de acento sutil (azul claro) */
+    /* Fondos y bordes */
+    --bg-main-cosmic: var(--cosmic-bg-dark);
+    --bg-section-cosmic: rgba(3, 0, 20, 0.7); /* Fondo de sección semi-transparente */
+    --border-cosmic-glow: rgba(135, 206, 235, 0.5); /* Borde con brillo celeste */
+    /* Sombras y brillos neón */
+    --shadow-cosmic: 0 6px 22px rgba(0, 0, 0, 0.6);
+    --glow-star: 0 0 12px var(--cosmic-star-white), 0 0 20px rgba(255, 255, 255, 0.7);
+    --glow-purple: 0 0 15px var(--cosmic-nebula-purple), 0 0 25px rgba(167, 140, 215, 0.5);
+    --glow-cyan: 0 0 15px var(--cosmic-nebula-cyan), 0 0 25px rgba(142, 232, 250, 0.5);
+    --glow-pink: 0 0 12px var(--cosmic-neon-pink), 0 0 20px rgba(255, 105, 180, 0.5);
+    --glow-purple-subtle: 0 0 12px rgba(167, 140, 215, 0.4); /* Variable añadida */
+    /* Fuentes: Futuristas y legibles */
+    --font-heading-cosmic: 'Orbitron', sans-serif; /* Futurista y geométrica para títulos */
+    --font-body-cosmic: 'Exo 2', sans-serif; /* Clara y moderna para el cuerpo del texto */
+    --font-accent-cosmic: 'Space Mono', monospace; /* Para detalles y código, estilo retro-futurista */
+    /* Espaciado y radios */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 32px;
+    --spacing-lg: 64px;
+    --border-radius-cosmic: 8px;
+    --border-radius-circle: 50%;
+}
+
+/* --- Base & Reset Globales --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body-cosmic);
+    line-height: 1.7;
+    color: var(--cosmic-text-light);
+    background-color: var(--bg-main-cosmic);
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre-light.png'); /* Fondo sutil de fibra de carbono */
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin-top: var(--spacing-lg); /* Añade margen superior para centrar visualmente */
+    margin-bottom: var(--spacing-lg);
+    padding: 0 35px; /* MODIFICADO: Aumentado el padding lateral a 35px para más espacio */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+/* --- Tipografía --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading-cosmic);
+    color: var(--cosmic-star-white);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.1;
+    text-shadow: var(--glow-star);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+    font-size: 1.1em;
+    color: var(--cosmic-nebula-cyan);
+    opacity: 0.8;
+    font-family: var(--font-accent-cosmic);
+    text-shadow: 0 0 5px rgba(142, 232, 250, 0.3);
+}
+
+/* Links */
+a {
+    color: var(--cosmic-neon-pink);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+    a:hover {
+        color: var(--cosmic-nebula-purple);
+        text-shadow: var(--glow-pink);
+    }
+
+/* --- Botones --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-cosmic);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: var(--font-heading-cosmic);
+    box-shadow: var(--shadow-cosmic);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+    .btn i {
+        font-size: 1.1em;
+    }
+
+.btn-primary-cosmic {
+    background: linear-gradient(45deg, var(--cosmic-neon-pink), #D843A9);
+    color: var(--cosmic-text-light);
+    border-color: var(--cosmic-neon-pink);
+    box-shadow: var(--glow-pink);
+}
+
+    .btn-primary-cosmic:hover {
+        background: linear-gradient(45deg, #D843A9, var(--cosmic-neon-pink));
+        box-shadow: 0 0 15px var(--cosmic-neon-pink), 0 0 30px rgba(255, 105, 180, 0.7);
+        transform: translateY(-3px) scale(1.02);
+    }
+
+.btn-outline-cosmic {
+    color: var(--cosmic-nebula-cyan);
+    border-color: var(--cosmic-nebula-cyan);
+    background-color: rgba(142, 232, 250, 0.1);
+    box-shadow: 0 0 10px rgba(142, 232, 250, 0.3);
+}
+
+    .btn-outline-cosmic:hover {
+        background-color: var(--cosmic-nebula-cyan);
+        color: var(--bg-main-cosmic);
+        box-shadow: var(--glow-cyan);
+        transform: translateY(-3px) scale(1.02);
+    }
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.1em;
+}
+
+/* --- Secciones Globales --- */
+.section-padded {
+    padding: var(--spacing-lg) 0;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-section-cosmic);
+    border: 1px solid var(--border-cosmic-glow);
+    border-radius: var(--border-radius-cosmic);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-cosmic);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 8px;
+    /* MODIFICADO: Asegura que los títulos de sección también estén centrados y con un ancho máximo */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(90deg, var(--cosmic-nebula-purple), var(--cosmic-star-white), var(--cosmic-nebula-cyan));
+        margin: 8px auto 0;
+        border-radius: 1px;
+        box-shadow: 0 0 5px var(--cosmic-accent-glow);
+    }
+
+/* --- Navbar --- */
+.navbar {
+    background-color: rgba(3, 0, 20, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 8px 0; /* AJUSTADO: Reducido de 10px a 8px */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-cosmic-glow);
+    width: 100%;
+}
+
+    .navbar .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .navbar .logo {
+        font-family: var(--font-heading-cosmic);
+        font-size: 1.8em; /* AJUSTADO: Reducido de 2.0em a 1.8em */
+        font-weight: 700;
+        color: var(--cosmic-star-white);
+        text-shadow: var(--glow-star);
+        transition: text-shadow 0.3s ease;
+        letter-spacing: 2px;
+    }
+
+        .navbar .logo:hover {
+            text-shadow: var(--glow-cyan);
+        }
+
+        .navbar .logo span {
+            color: var(--cosmic-neon-pink);
+        }
+
+#nav-menu {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--cosmic-text-light);
+    padding: 5px 10px; /* AJUSTADO: Reducido de 6px 12px a 5px 10px */
+    font-size: 0.85em; /* AJUSTADO: Reducido de 0.9em a 0.85em */
+    border-radius: var(--border-radius-cosmic);
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+    .nav-link:hover {
+        background-color: var(--cosmic-nebula-purple);
+        color: var(--cosmic-text-light);
+        text-shadow: var(--glow-purple);
+    }
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.2em; /* AJUSTADO: Reducido de 1.4em a 1.2em */
+    cursor: pointer;
+    color: var(--cosmic-text-light);
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+    .icon-btn:hover {
+        color: var(--cosmic-neon-pink);
+        transform: scale(1.1);
+        text-shadow: var(--glow-pink);
+    }
+
+.hamburger-btn {
+    display: none;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(160deg, var(--bg-main-cosmic) 0%, #00000C 100%);
+    padding: var(--spacing-lg) 0;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-cosmic-glow);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-text-content {
+    animation: fadeInSlideLeft 1.2s ease-out forwards;
+}
+
+    .hero-text-content h1 {
+        font-size: 3.5em;
+        margin-bottom: var(--spacing-xs);
+        letter-spacing: 0.5px;
+        text-shadow: var(--glow-star);
+    }
+
+    .hero-text-content .accent-text {
+        color: var(--cosmic-neon-pink);
+        text-shadow: var(--glow-pink);
+    }
+
+    .hero-text-content .tagline {
+        font-family: var(--font-accent-cosmic);
+        font-size: 1.5em;
+        color: var(--cosmic-nebula-cyan);
+        margin-bottom: var(--spacing-md);
+        letter-spacing: 0.5px;
+        text-shadow: var(--glow-cyan);
+    }
+
+    .hero-text-content .intro-message {
+        font-size: 1.1em;
+        line-height: 1.7;
+        color: var(--cosmic-text-light);
+        max-width: 600px;
+        margin: 0 auto var(--spacing-lg);
+        opacity: 0.8;
+    }
+
+.hero-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    justify-content: center;
+}
+
+    .social-links a {
+        font-size: 2.2em;
+        color: var(--cosmic-text-light);
+        transition: color 0.3s ease, transform 0.3s ease;
+        text-shadow: 0 0 5px rgba(255,255,255,0.1);
+    }
+
+        .social-links a:hover {
+            color: var(--cosmic-nebula-purple);
+            transform: translateY(-5px) scale(1.1);
+            text-shadow: var(--glow-purple);
+        }
+
+.hero-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    animation: fadeInScale 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.profile-avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: var(--border-radius-circle);
+    object-fit: cover;
+    border: 3px solid var(--cosmic-star-white);
+    box-shadow: var(--glow-star);
+    animation: pulseGlowCosmic 3s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlowCosmic {
+    0% {
+        box-shadow: var(--glow-star);
+        border-color: var(--cosmic-star-white);
+    }
+
+    50% {
+        box-shadow: var(--glow-purple);
+        border-color: var(--cosmic-nebula-purple);
+    }
+
+    100% {
+        box-shadow: var(--glow-star);
+        border-color: var(--cosmic-star-white);
+    }
+}
+
+.code-snippet-overlay {
+    position: absolute;
+    bottom: var(--spacing-sm);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--cosmic-nebula-cyan);
+    border-radius: var(--border-radius-cosmic);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: var(--font-accent-cosmic);
+    font-size: 0.85em;
+    color: var(--cosmic-text-light);
+    box-shadow: 0 0 10px var(--cosmic-accent-glow);
+    white-space: pre-wrap;
+    overflow: hidden;
+    max-width: 80%;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.8s;
+    z-index: 5;
+    text-align: left;
+}
+
+.code-keyword {
+    color: var(--cosmic-neon-pink);
+    font-weight: bold;
+}
+
+.code-param {
+    color: var(--cosmic-ring-orange);
+}
+
+.code-comment {
+    color: #777;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.code-return {
+    color: var(--cosmic-nebula-purple);
+}
+
+.code-string {
+    color: var(--cosmic-nebula-cyan);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSlideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --- Skills Section --- */
+.skills-section {
+    background-color: var(--bg-section-cosmic);
+    padding: var(--spacing-lg) 0;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--spacing-md);
+    padding: 0;
+    margin-top: var(--spacing-md);
+    width: 100%;
+}
+
+.skill-card {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-cosmic);
+    text-align: center;
+    box-shadow: var(--shadow-cosmic);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra el contenido verticalmente también */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid rgba(135, 206, 235, 0.3); /* Borde sutil */
+    position: relative; /* Para el brillo adicional */
+    overflow: hidden; /* Asegura que el brillo no se desborde */
+}
+
+    .skill-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(142, 232, 250, 0.2) 0%, rgba(167, 140, 215, 0.2) 25%, transparent 50%);
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+        pointer-events: none; /* Permite hacer clic a través del pseudo-elemento */
+    }
+
+
+    .skill-card:hover {
+        transform: translateY(-8px) scale(1.05);
+        background-color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 25px var(--cosmic-nebula-cyan), 0 0 40px rgba(142, 232, 250, 0.6); /* Brillo más fuerte */
+        border-color: var(--cosmic-nebula-cyan);
+    }
+
+        .skill-card:hover::before {
+            opacity: 1; /* Activa el brillo radial al pasar el ratón */
+        }
+
+    .skill-card img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+        filter: drop-shadow(0 0 12px var(--cosmic-nebula-cyan)); /* Sombra fluorescente más intensa */
+        transition: filter 0.3s ease;
+    }
+
+    .skill-card:hover img {
+        filter: drop-shadow(0 0 18px var(--cosmic-neon-pink)); /* Cambio de color de brillo al pasar el ratón */
+    }
+
+    .skill-card h3 {
+        font-size: 1.2em;
+        color: var(--cosmic-star-white);
+        margin: 0;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Sombra para el texto */
+        z-index: 1; /* Asegura que el texto esté sobre el brillo */
+    }
+
+/* --- Call to Action (CTA) Section --- */
+.cta-section {
+    background: linear-gradient(135deg, var(--cosmic-nebula-purple) 0%, var(--cosmic-neon-pink) 100%);
+    color: var(--cosmic-text-light);
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--border-cosmic-glow);
+    border-bottom: 1px solid var(--border-cosmic-glow);
+    box-shadow: 0 0 30px rgba(167, 140, 215, 0.5);
+}
+
+.cta-title {
+    color: var(--cosmic-star-white);
+    font-size: 3em;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: var(--glow-star);
+}
+
+.cta-subtitle {
+    font-size: 1.3em;
+    margin-bottom: var(--spacing-md);
+    color: rgba(245, 245, 245, 0.9);
+    font-weight: 300;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: var(--bg-main-cosmic);
+    padding: var(--spacing-lg) 0;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: var(--border-radius-cosmic);
+    box-shadow: var(--shadow-cosmic);
+    border: 1px solid var(--cosmic-nebula-purple);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: var(--cosmic-star-white);
+        font-family: var(--font-heading-cosmic);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #555;
+        border-radius: var(--border-radius-cosmic);
+        font-family: var(--font-body-cosmic);
+        font-size: 1em;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--cosmic-text-light);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--cosmic-neon-pink);
+            box-shadow: 0 0 5px var(--cosmic-accent-glow);
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 150px;
+    }
+
+.error-message {
+    color: var(--cosmic-neon-pink);
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+    text-shadow: 0 0 3px rgba(255, 105, 180, 0.5);
+}
+
+.success-message {
+    color: var(--cosmic-nebula-cyan);
+    font-size: 1em;
+    margin-top: var(--spacing-md);
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(142, 232, 250, 0.5);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1em;
+    margin-top: var(--spacing-sm);
+}
+
+/* --- Footer --- */
+footer { /* Changed from .footer to just footer for direct application */
+    background-color: var(--bg-main-cosmic);
+    color: #777;
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    font-size: 0.85em;
+    border-top: 1px solid var(--border-cosmic-glow);
+}
+
+/* The following styles for footer-content and footer-social-links
+    were assumed to be part of the general footer styling.
+    I am placing them here directly as they are part of the original CSS structure
+    you've been working with, even if the specific selectors might have varied. */
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.footer-social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+}
+
+    .footer-social-links a {
+        font-size: 1.8em;
+        color: #777;
+        transition: color 0.3s ease, transform 0.3s ease;
+        text-shadow: 0 0 3px rgba(255,255,255,0.1);
+    }
+
+        .footer-social-links a:hover {
+            color: var(--cosmic-neon-pink);
+            transform: translateY(-3px);
+            text-shadow: var(--glow-pink);
+        }
+
+/* --- Ajustes para formalidad, centrado y compactación (Añadido/Modificado) --- */
+
+/* Contenedor para centrar bloques de texto dentro de las secciones */
+.content-block {
+    max-width: 850px; /* Ancho máximo para la legibilidad del texto */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0; /* Ya tiene padding del .container, no necesita más aquí si se usa con .container */
+    box-sizing: border-box;
+}
+
+    .content-block p {
+        text-align: justify; /* Justifica el texto para un look más formal y compacto */
+        margin-bottom: 1em; /* Espacio entre párrafos */
+        line-height: 1.6; /* Mejora la legibilidad */
+        color: var(--cosmic-text-light); /* Color de texto consistente */
+    }
+
+    /* Ajustes específicos para listas dentro de content-block */
+    .content-block ul {
+        list-style-type: none; /* Quita los bullets por defecto */
+        padding: 0;
+        margin: 0;
+    }
+
+        .content-block ul li {
+            background-color: rgba(0, 0, 0, 0.35); /* Fondo sutil para cada ítem de lista */
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius-cosmic);
+            margin-bottom: var(--spacing-sm);
+            border: 1px solid rgba(167, 140, 215, 0.25); /* Borde sutil púrpura */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+            transition: all 0.3s ease;
+            text-align: left; /* Asegura que el contenido de la lista sea siempre a la izquierda */
+        }
+
+            .content-block ul li:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), var(--glow-purple-subtle);
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            .content-block ul li strong {
+                display: block; /* Título del proyecto en su propia línea */
+                font-size: 1.1em;
+                color: var(--cosmic-star-white);
+                margin-bottom: 6px; /* Espacio reducido */
+                text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+            }
+
+            .content-block ul li p {
+                margin-bottom: 0; /* Elimina margen inferior extra en los párrafos de lista */
+                font-size: 0.9em; /* Fuente ligeramente más pequeña para compactar */
+                line-height: 1.5; /* Ajusta interlineado */
+                color: rgba(245, 245, 245, 0.85); /* Un poco más oscuro para contraste */
+            }
+
+/* Estilo para los detalles de educación */
+.education-detail {
+    font-size: 0.9em; /* Un poco más pequeño */
+    color: rgba(245, 245, 245, 0.75);
+    margin-top: 5px;
+    line-height: 1.5;
+    text-align: left; /* Asegura alineación a la izquierda dentro de la tarjeta */
+}
+
+/* Skills list, if not already within content-block, center it */
+.skill-list { /* Assuming this class wraps skill spans */
+    max-width: 900px; /* Consistent with other content blocks */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs); /* Use a smaller gap for compactness */
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+.skill-item {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-cosmic);
+    border: 1px solid rgba(142, 232, 250, 0.3);
+    color: var(--cosmic-nebula-cyan);
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap; /* Prevents wrapping within a skill item */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+    .skill-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), var(--glow-cyan);
+        background-color: rgba(0, 0, 0, 0.6);
+        color: var(--cosmic-star-white);
+    }
+
+    .skill-item i {
+        color: var(--cosmic-neon-pink); /* Icon color */
+        font-size: 1.1em;
+    }
+
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-bottom: var(--spacing-md);
+    }
+
+    .hero-image-container {
+        order: -1;
+        margin-bottom: var(--spacing-md);
+        padding-bottom: 0;
+    }
+
+    .profile-avatar {
+        width: 250px;
+        height: 250px;
+    }
+
+    .code-snippet-overlay {
+        bottom: 0px;
+        transform: translateX(-50%) scale(0.85);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.75em;
+        max-width: 90%;
+    }
+
+    .hero-text-content {
+        padding-bottom: var(--spacing-md);
+    }
+
+    .hero-actions, .social-links {
+        justify-content: center;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: var(--spacing-sm);
+    }
+
+    .skill-card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cta-title {
+        font-size: 2.5em;
+    }
+
+    .cta-subtitle {
+        font-size: 1.2em;
+    }
+
+    .btn-large {
+        padding: 14px 28px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .navbar .nav-content {
+        flex-wrap: wrap;
+    }
+
+    /* AJUSTADO: Esto podría requerir ajuste si la altura total de la navbar es muy pequeña ahora */
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(3, 0, 20, 0.9);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 50px; /* Ajustado para que el menú aparezca más arriba con una navbar más pequeña */
+        left: 0;
+        padding: var(--spacing-sm) 0;
+        border-top: 1px solid var(--border-cosmic-glow);
+    }
+
+        #nav-menu.active {
+            display: flex;
+        }
+
+        #nav-menu .nav-link {
+            padding: 8px var(--spacing-md); /* AJUSTADO: Reducido un poco para modo móvil */
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid rgba(135, 206, 235, 0.1);
+        }
+
+            #nav-menu .nav-link:last-child {
+                border-bottom: none;
+            }
+
+    .hamburger-btn {
+        display: block;
+    }
+
+    .nav-toggle-btn {
+        margin-left: auto;
+    }
+
+    .hero-text-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-text-content .tagline {
+        font-size: 1.3em;
+    }
+
+    .profile-avatar {
+        width: 200px;
+        height: 200px;
+    }
+
+    .code-snippet-overlay {
+        font-size: 0.7em;
+        padding: 6px 10px;
+        bottom: 5px;
+        max-width: 95%;
+    }
+
+    .section-padded {
+        padding: var(--spacing-md) 0;
+    }
+
+    .section-title {
+        font-size: 2em;
+        /* MODIFICADO: Añadido para asegurar centrado en móviles */
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section-subtitle {
+        font-size: 0.9em;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .skill-grid {
+        gap: var(--spacing-xs);
+    }
+
+    .skill-card {
+        padding: var(--spacing-xs);
+    }
+
+        .skill-card img {
+            width: 50px;
+            height: 50px;
+        }
+
+    .cta-title {
+        font-size: 2em;
+    }
+
+    .cta-subtitle {
+        font-size: 1em;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+    .contact-form {
+        padding: var(--spacing-sm);
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .footer-social-links {
+        margin-top: var(--spacing-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .navbar .logo {
+        font-size: 1.8em; /* Mantenido o ajustado si lo deseas */
+    }
+
+    .hero-text-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-text-content .tagline {
+        font-size: 1em;
+    }
+
+    .profile-avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .code-snippet-overlay {
+        font-size: 0.6em;
+        padding: 5px 8px;
+        bottom: -5px;
+        max-width: 95%;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+
+    .skill-card h3 {
+        font-size: 0.9em;
+    }
+
+    .cta-title {
+        font-size: 1.8em;
+    }
+
+    .cta-subtitle {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.8em;
+    }
+}
+
+/* --- Estilos para Modo Claro --- */
+body.light-mode {
+    background-color: #F0F8FF; /* Azul pálido */
+    color: #333;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+}
+
+    body.light-mode .navbar {
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-bottom-color: #ddd;
+    }
+/* --- CSS Variables: Colores y Fuentes Cósmico Neón --- */
+:root {
+    /* Paleta de colores cósmica con toques neón */
+    --cosmic-bg-dark: #030014; /* Fondo negro profundo del espacio */
+    --cosmic-star-white: #FFFFFF; /* Blanco brillante de las estrellas */
+    --cosmic-nebula-purple: #A78CD7; /* Púrpura nebulosa suave */
+    --cosmic-nebula-cyan: #8EE8FA; /* Cian nebulosa etéreo */
+    --cosmic-ring-orange: #F7B267; /* Naranja de anillos planetarios */
+    --cosmic-neon-pink: #FF69B4; /* Rosa neón cósmico */
+    --cosmic-text-light: #F5F5F5; /* Texto claro sobre fondo oscuro */
+    --cosmic-accent-glow: rgba(173, 216, 230, 0.3); /* Brillo de acento sutil (azul claro) */
+    /* Fondos y bordes */
+    --bg-main-cosmic: var(--cosmic-bg-dark);
+    --bg-section-cosmic: rgba(3, 0, 20, 0.7); /* Fondo de sección semi-transparente */
+    --border-cosmic-glow: rgba(135, 206, 235, 0.5); /* Borde con brillo celeste */
+    /* Sombras y brillos neón */
+    --shadow-cosmic: 0 6px 22px rgba(0, 0, 0, 0.6);
+    --glow-star: 0 0 12px var(--cosmic-star-white), 0 0 20px rgba(255, 255, 255, 0.7);
+    --glow-purple: 0 0 15px var(--cosmic-nebula-purple), 0 0 25px rgba(167, 140, 215, 0.5);
+    --glow-cyan: 0 0 15px var(--cosmic-nebula-cyan), 0 0 25px rgba(142, 232, 250, 0.5);
+    --glow-pink: 0 0 12px var(--cosmic-neon-pink), 0 0 20px rgba(255, 105, 180, 0.5);
+    --glow-purple-subtle: 0 0 12px rgba(167, 140, 215, 0.4); /* Variable añadida */
+    /* Fuentes: Futuristas y legibles */
+    --font-heading-cosmic: 'Orbitron', sans-serif; /* Futurista y geométrica para títulos */
+    --font-body-cosmic: 'Exo 2', sans-serif; /* Clara y moderna para el cuerpo del texto */
+    --font-accent-cosmic: 'Space Mono', monospace; /* Para detalles y código, estilo retro-futurista */
+    /* Espaciado y radios */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 32px;
+    --spacing-lg: 64px;
+    --border-radius-cosmic: 8px;
+    --border-radius-circle: 50%;
+}
+
+/* --- Base & Reset Globales --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body-cosmic);
+    line-height: 1.7;
+    color: var(--cosmic-text-light);
+    background-color: var(--bg-main-cosmic);
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre-light.png'); /* Fondo sutil de fibra de carbono */
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin-top: var(--spacing-lg); /* Añade margen superior para centrar visualmente */
+    margin-bottom: var(--spacing-lg);
+    padding: 0 35px; /* MODIFICADO: Aumentado el padding lateral a 35px para más espacio */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+/* --- Tipografía --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading-cosmic);
+    color: var(--cosmic-star-white);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.1;
+    text-shadow: var(--glow-star);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+    font-size: 1.1em;
+    color: var(--cosmic-nebula-cyan);
+    opacity: 0.8;
+    font-family: var(--font-accent-cosmic);
+    text-shadow: 0 0 5px rgba(142, 232, 250, 0.3);
+}
+
+/* Links */
+a {
+    color: var(--cosmic-neon-pink);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+    a:hover {
+        color: var(--cosmic-nebula-purple);
+        text-shadow: var(--glow-pink);
+    }
+
+/* --- Botones --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-cosmic);
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: var(--font-heading-cosmic);
+    box-shadow: var(--shadow-cosmic);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+    .btn i {
+        font-size: 1.1em;
+    }
+
+.btn-primary-cosmic {
+    background: linear-gradient(45deg, var(--cosmic-neon-pink), #D843A9);
+    color: var(--cosmic-text-light);
+    border-color: var(--cosmic-neon-pink);
+    box-shadow: var(--glow-pink);
+}
+
+    .btn-primary-cosmic:hover {
+        background: linear-gradient(45deg, #D843A9, var(--cosmic-neon-pink));
+        box-shadow: 0 0 15px var(--cosmic-neon-pink), 0 0 30px rgba(255, 105, 180, 0.7);
+        transform: translateY(-3px) scale(1.02);
+    }
+
+.btn-outline-cosmic {
+    color: var(--cosmic-nebula-cyan);
+    border-color: var(--cosmic-nebula-cyan);
+    background-color: rgba(142, 232, 250, 0.1);
+    box-shadow: 0 0 10px rgba(142, 232, 250, 0.3);
+}
+
+    .btn-outline-cosmic:hover {
+        background-color: var(--cosmic-nebula-cyan);
+        color: var(--bg-main-cosmic);
+        box-shadow: var(--glow-cyan);
+        transform: translateY(-3px) scale(1.02);
+    }
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.1em;
+}
+
+/* --- Secciones Globales --- */
+.section-padded {
+    padding: var(--spacing-lg) 0;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-section-cosmic);
+    border: 1px solid var(--border-cosmic-glow);
+    border-radius: var(--border-radius-cosmic);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-cosmic);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 8px;
+    /* MODIFICADO: Asegura que los títulos de sección también estén centrados y con un ancho máximo */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(90deg, var(--cosmic-nebula-purple), var(--cosmic-star-white), var(--cosmic-nebula-cyan));
+        margin: 8px auto 0;
+        border-radius: 1px;
+        box-shadow: 0 0 5px var(--cosmic-accent-glow);
+    }
+
+/ /* --- Navbar --- */
+.navbar {
+    background-color: rgba(3, 0, 20, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 5px 0; /* AJUSTADO: Reducido de 8px a 5px */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-cosmic-glow);
+    width: 100%;
+}
+
+.navbar .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.navbar .logo {
+    font-family: var(--font-heading-cosmic);
+    font-size: 1.6em; /* AJUSTADO: Reducido de 1.8em a 1.6em */
+    font-weight: 700;
+    color: var(--cosmic-star-white);
+    text-shadow: var(--glow-star);
+    transition: text-shadow 0.3s ease;
+    letter-spacing: 2px;
+}
+
+    .navbar .logo:hover {
+        text-shadow: var(--glow-cyan);
+    }
+
+    .navbar .logo span {
+        color: var(--cosmic-neon-pink);
+    }
+
+#nav-menu {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--cosmic-text-light);
+    padding: 4px 8px; /* AJUSTADO: Reducido de 5px 10px a 4px 8px */
+    font-size: 0.8em; /* AJUSTADO: Reducido de 0.85em a 0.8em */
+    border-radius: var(--border-radius-cosmic);
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+    .nav-link:hover {
+        background-color: var(--cosmic-nebula-purple);
+        color: var(--cosmic-text-light);
+        text-shadow: var(--glow-purple);
+    }
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.1em; /* AJUSTADO: Reducido de 1.2em a 1.1em */
+    cursor: pointer;
+    color: var(--cosmic-text-light);
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+    .icon-btn:hover {
+        color: var(--cosmic-neon-pink);
+        transform: scale(1.1);
+        text-shadow: var(--glow-pink);
+    }
+
+.hamburger-btn {
+    display: none;
+}
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 768px) {
+    /* ... (resto de las reglas @media que no fueron modificadas) ... */
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(3, 0, 20, 0.9);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 45px; /* AJUSTADO: Reducido de 50px a 45px para la navbar más compacta */
+        left: 0;
+        padding: var(--spacing-sm) 0;
+        border-top: 1px solid var(--border-cosmic-glow);
+    }
+
+        #nav-menu.active {
+            display: flex;
+        }
+
+        #nav-menu .nav-link {
+            padding: 6px var(--spacing-md); /* AJUSTADO: Reducido un poco más para modo móvil */
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid rgba(135, 206, 235, 0.1);
+        }
+
+            #nav-menu .nav-link:last-child {
+                border-bottom: none;
+            }
+
+    .hamburger-btn {
+        display: block;
+    }
+
+    .nav-toggle-btn {
+        margin-left: auto;
+    }
+
+    /* ... (resto de las reglas @media que no fueron modificadas) ... */
+}
+
+@media (max-width: 480px) {
+    /* ... (resto de las reglas @media que no fueron modificadas) ... */
+
+    .navbar .logo {
+        font-size: 1.6em; /* Mantenido o ajustado si lo deseas */
+    }
+
+    /* ... (resto de las reglas @media que no fueron modificadas) ... */
+}
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(160deg, var(--bg-main-cosmic) 0%, #00000C 100%);
+    padding: var(--spacing-lg) 0;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-cosmic-glow);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-text-content {
+    animation: fadeInSlideLeft 1.2s ease-out forwards;
+}
+
+    .hero-text-content h1 {
+        font-size: 3.5em;
+        margin-bottom: var(--spacing-xs);
+        letter-spacing: 0.5px;
+        text-shadow: var(--glow-star);
+    }
+
+    .hero-text-content .accent-text {
+        color: var(--cosmic-neon-pink);
+        text-shadow: var(--glow-pink);
+    }
+
+    .hero-text-content .tagline {
+        font-family: var(--font-accent-cosmic);
+        font-size: 1.5em;
+        color: var(--cosmic-nebula-cyan);
+        margin-bottom: var(--spacing-md);
+        letter-spacing: 0.5px;
+        text-shadow: var(--glow-cyan);
+    }
+
+    .hero-text-content .intro-message {
+        font-size: 1.1em;
+        line-height: 1.7;
+        color: var(--cosmic-text-light);
+        max-width: 600px;
+        margin: 0 auto var(--spacing-lg);
+        opacity: 0.8;
+    }
+
+.hero-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    justify-content: center;
+}
+
+    .social-links a {
+        font-size: 2.2em;
+        color: var(--cosmic-text-light);
+        transition: color 0.3s ease, transform 0.3s ease;
+        text-shadow: 0 0 5px rgba(255,255,255,0.1);
+    }
+
+        .social-links a:hover {
+            color: var(--cosmic-nebula-purple);
+            transform: translateY(-5px) scale(1.1);
+            text-shadow: var(--glow-purple);
+        }
+
+.hero-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    animation: fadeInScale 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.profile-avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: var(--border-radius-circle);
+    object-fit: cover;
+    border: 3px solid var(--cosmic-star-white);
+    box-shadow: var(--glow-star);
+    animation: pulseGlowCosmic 3s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlowCosmic {
+    0% {
+        box-shadow: var(--glow-star);
+        border-color: var(--cosmic-star-white);
+    }
+
+    50% {
+        box-shadow: var(--glow-purple);
+        border-color: var(--cosmic-nebula-purple);
+    }
+
+    100% {
+        box-shadow: var(--glow-star);
+        border-color: var(--cosmic-star-white);
+    }
+}
+
+.code-snippet-overlay {
+    position: absolute;
+    bottom: var(--spacing-sm);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--cosmic-nebula-cyan);
+    border-radius: var(--border-radius-cosmic);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: var(--font-accent-cosmic);
+    font-size: 0.85em;
+    color: var(--cosmic-text-light);
+    box-shadow: 0 0 10px var(--cosmic-accent-glow);
+    white-space: pre-wrap;
+    overflow: hidden;
+    max-width: 80%;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.8s;
+    z-index: 5;
+    text-align: left;
+}
+
+.code-keyword {
+    color: var(--cosmic-neon-pink);
+    font-weight: bold;
+}
+
+.code-param {
+    color: var(--cosmic-ring-orange);
+}
+
+.code-comment {
+    color: #777;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.code-return {
+    color: var(--cosmic-nebula-purple);
+}
+
+.code-string {
+    color: var(--cosmic-nebula-cyan);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSlideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --- Skills Section --- */
+.skills-section {
+    background-color: var(--bg-section-cosmic);
+    padding: var(--spacing-lg) 0;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--spacing-md);
+    padding: 0;
+    margin-top: var(--spacing-md);
+    width: 100%;
+}
+
+.skill-card {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-cosmic);
+    text-align: center;
+    box-shadow: var(--shadow-cosmic);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra el contenido verticalmente también */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid rgba(135, 206, 235, 0.3); /* Borde sutil */
+    position: relative; /* Para el brillo adicional */
+    overflow: hidden; /* Asegura que el brillo no se desborde */
+}
+
+    .skill-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(142, 232, 250, 0.2) 0%, rgba(167, 140, 215, 0.2) 25%, transparent 50%);
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+        pointer-events: none; /* Permite hacer clic a través del pseudo-elemento */
+    }
+
+
+    .skill-card:hover {
+        transform: translateY(-8px) scale(1.05);
+        background-color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 25px var(--cosmic-nebula-cyan), 0 0 40px rgba(142, 232, 250, 0.6); /* Brillo más fuerte */
+        border-color: var(--cosmic-nebula-cyan);
+    }
+
+        .skill-card:hover::before {
+            opacity: 1; /* Activa el brillo radial al pasar el ratón */
+        }
+
+    .skill-card img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+        filter: drop-shadow(0 0 12px var(--cosmic-nebula-cyan)); /* Sombra fluorescente más intensa */
+        transition: filter 0.3s ease;
+    }
+
+    .skill-card:hover img {
+        filter: drop-shadow(0 0 18px var(--cosmic-neon-pink)); /* Cambio de color de brillo al pasar el ratón */
+    }
+
+    .skill-card h3 {
+        font-size: 1.2em;
+        color: var(--cosmic-star-white);
+        margin: 0;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Sombra para el texto */
+        z-index: 1; /* Asegura que el texto esté sobre el brillo */
+    }
+
+/* --- Call to Action (CTA) Section --- */
+.cta-section {
+    background: linear-gradient(135deg, var(--cosmic-nebula-purple) 0%, var(--cosmic-neon-pink) 100%);
+    color: var(--cosmic-text-light);
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--border-cosmic-glow);
+    border-bottom: 1px solid var(--border-cosmic-glow);
+    box-shadow: 0 0 30px rgba(167, 140, 215, 0.5);
+}
+
+.cta-title {
+    color: var(--cosmic-star-white);
+    font-size: 3em;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: var(--glow-star);
+}
+
+.cta-subtitle {
+    font-size: 1.3em;
+    margin-bottom: var(--spacing-md);
+    color: rgba(245, 245, 245, 0.9);
+    font-weight: 300;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: var(--bg-main-cosmic);
+    padding: var(--spacing-lg) 0;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: var(--border-radius-cosmic);
+    box-shadow: var(--shadow-cosmic);
+    border: 1px solid var(--cosmic-nebula-purple);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: var(--cosmic-star-white);
+        font-family: var(--font-heading-cosmic);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #555;
+        border-radius: var(--border-radius-cosmic);
+        font-family: var(--font-body-cosmic);
+        font-size: 1em;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--cosmic-text-light);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--cosmic-neon-pink);
+            box-shadow: 0 0 5px var(--cosmic-accent-glow);
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 150px;
+    }
+
+.error-message {
+    color: var(--cosmic-neon-pink);
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+    text-shadow: 0 0 3px rgba(255, 105, 180, 0.5);
+}
+
+.success-message {
+    color: var(--cosmic-nebula-cyan);
+    font-size: 1em;
+    margin-top: var(--spacing-md);
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(142, 232, 250, 0.5);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1em;
+    margin-top: var(--spacing-sm);
+}
+
+/* --- Footer --- */
+footer { /* Changed from .footer to just footer for direct application */
+    background-color: var(--bg-main-cosmic);
+    color: #777;
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    font-size: 0.85em;
+    border-top: 1px solid var(--border-cosmic-glow);
+}
+
+/* The following styles for footer-content and footer-social-links
+    were assumed to be part of the general footer styling.
+    I am placing them here directly as they are part of the original CSS structure
+    you've been working with, even if the specific selectors might have varied. */
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.footer-social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+}
+
+    .footer-social-links a {
+        font-size: 1.8em;
+        color: #777;
+        transition: color 0.3s ease, transform 0.3s ease;
+        text-shadow: 0 0 3px rgba(255,255,255,0.1);
+    }
+
+        .footer-social-links a:hover {
+            color: var(--cosmic-neon-pink);
+            transform: translateY(-3px);
+            text-shadow: var(--glow-pink);
+        }
+
+/* --- Ajustes para formalidad, centrado y compactación (Añadido/Modificado) --- */
+
+/* Contenedor para centrar bloques de texto dentro de las secciones */
+.content-block {
+    max-width: 850px; /* Ancho máximo para la legibilidad del texto */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0; /* Ya tiene padding del .container, no necesita más aquí si se usa con .container */
+    box-sizing: border-box;
+}
+
+.content-block p {
+    text-align: justify; /* Justifica el texto para un look más formal y compacto */
+    margin-bottom: 1em; /* Espacio entre párrafos */
+    line-height: 1.6; /* Mejora la legibilidad */
+    color: var(--cosmic-text-light); /* Color de texto consistente */
+}
+
+/* Ajustes específicos para listas dentro de content-block */
+.content-block ul {
+    list-style-type: none; /* Quita los bullets por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+.content-block ul li {
+    background-color: rgba(0, 0, 0, 0.35); /* Fondo sutil para cada ítem de lista */
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-cosmic);
+    margin-bottom: var(--spacing-sm);
+    border: 1px solid rgba(167, 140, 215, 0.25); /* Borde sutil púrpura */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease;
+    text-align: left; /* Asegura que el contenido de la lista sea siempre a la izquierda */
+}
+
+.content-block ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), var(--glow-purple-subtle);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content-block ul li strong {
+    display: block; /* Título del proyecto en su propia línea */
+    font-size: 1.1em;
+    color: var(--cosmic-star-white);
+    margin-bottom: 6px; /* Espacio reducido */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.content-block ul li p {
+    margin-bottom: 0; /* Elimina margen inferior extra en los párrafos de lista */
+    font-size: 0.9em; /* Fuente ligeramente más pequeña para compactar */
+    line-height: 1.5; /* Ajusta interlineado */
+    color: rgba(245, 245, 245, 0.85); /* Un poco más oscuro para contraste */
+}
+
+/* Estilo para los detalles de educación */
+.education-detail {
+    font-size: 0.9em; /* Un poco más pequeño */
+    color: rgba(245, 245, 245, 0.75);
+    margin-top: 5px;
+    line-height: 1.5;
+    text-align: left; /* Asegura alineación a la izquierda dentro de la tarjeta */
+}
+
+/* Skills list, if not already within content-block, center it */
+.skill-list { /* Assuming this class wraps skill spans */
+    max-width: 900px; /* Consistent with other content blocks */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs); /* Use a smaller gap for compactness */
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+.skill-item {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-cosmic);
+    border: 1px solid rgba(142, 232, 250, 0.3);
+    color: var(--cosmic-nebula-cyan);
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap; /* Prevents wrapping within a skill item */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), var(--glow-cyan);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--cosmic-star-white);
+}
+
+.skill-item i {
+    color: var(--cosmic-neon-pink); /* Icon color */
+    font-size: 1.1em;
+}
+
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-bottom: var(--spacing-md);
+    }
+
+    .hero-image-container {
+        order: -1;
+        margin-bottom: var(--spacing-md);
+        padding-bottom: 0;
+    }
+
+    .profile-avatar {
+        width: 250px;
+        height: 250px;
+    }
+
+    .code-snippet-overlay {
+        bottom: 0px;
+        transform: translateX(-50%) scale(0.85);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.75em;
+        max-width: 90%;
+    }
+
+    .hero-text-content {
+        padding-bottom: var(--spacing-md);
+    }
+
+    .hero-actions, .social-links {
+        justify-content: center;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: var(--spacing-sm);
+    }
+
+    .skill-card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cta-title {
+        font-size: 2.5em;
+    }
+
+    .cta-subtitle {
+        font-size: 1.2em;
+    }
+
+    .btn-large {
+        padding: 14px 28px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .navbar .nav-content {
+        flex-wrap: wrap;
+    }
+
+    /* AJUSTADO: Esto podría requerir ajuste si la altura total de la navbar es muy pequeña ahora */
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(3, 0, 20, 0.9);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 50px; /* Ajustado para que el menú aparezca más arriba con una navbar más pequeña */
+        left: 0;
+        padding: var(--spacing-sm) 0;
+        border-top: 1px solid var(--border-cosmic-glow);
+    }
+
+        #nav-menu.active {
+            display: flex;
+        }
+
+        #nav-menu .nav-link {
+            padding: 8px var(--spacing-md); /* AJUSTADO: Reducido un poco para modo móvil */
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid rgba(135, 206, 235, 0.1);
+        }
+
+            #nav-menu .nav-link:last-child {
+                border-bottom: none;
+            }
+
+    .hamburger-btn {
+        display: block;
+    }
+
+    .nav-toggle-btn {
+        margin-left: auto;
+    }
+
+    .hero-text-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-text-content .tagline {
+        font-size: 1.3em;
+    }
+
+    .profile-avatar {
+        width: 200px;
+        height: 200px;
+    }
+
+    .code-snippet-overlay {
+        font-size: 0.7em;
+        padding: 6px 10px;
+        bottom: 5px;
+        max-width: 95%;
+    }
+
+    .section-padded {
+        padding: var(--spacing-md) 0;
+    }
+
+    .section-title {
+        font-size: 2em;
+        /* MODIFICADO: Añadido para asegurar centrado en móviles */
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section-subtitle {
+        font-size: 0.9em;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .skill-grid {
+        gap: var(--spacing-xs);
+    }
+
+    .skill-card {
+        padding: var(--spacing-xs);
+    }
+
+        .skill-card img {
+            width: 50px;
+            height: 50px;
+        }
+
+    .cta-title {
+        font-size: 2em;
+    }
+
+    .cta-subtitle {
+        font-size: 1em;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+    .contact-form {
+        padding: var(--spacing-sm);
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .footer-social-links {
+        margin-top: var(--spacing-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .navbar .logo {
+        font-size: 1.8em; /* Mantenido o ajustado si lo deseas */
+    }
+
+    .hero-text-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-text-content .tagline {
+        font-size: 1em;
+    }
+
+    .profile-avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .code-snippet-overlay {
+        font-size: 0.6em;
+        padding: 5px 8px;
+        bottom: -5px;
+        max-width: 95%;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+
+    .skill-card h3 {
+        font-size: 0.9em;
+    }
+
+    .cta-title {
+        font-size: 1.8em;
+    }
+
+    .cta-subtitle {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.8em;
+    }
+}
+
+/* --- Estilos para Modo Claro --- */
+body.light-mode {
+    background-color: #F0F8FF; /* Azul pálido */
+    color: #333;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+}
+
+    body.light-mode .navbar {
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-bottom-color: #ddd;
+    }
+/* --- Estilos Específicos para la Página de Proyectos (Añadir a styles.css) --- */
+
+/* Diseño de la Tarjeta de Proyecto */
+.project-card {
+    background-color: var(--card-bg-color); /* Asumiendo que tienes variables de color */
+    border-radius: var(--border-radius); /* Asumiendo que tienes variable de border-radius */
+    box-shadow: var(--shadow-light); /* Asumiendo que tienes variable de sombra */
+    overflow: hidden; /* Asegura que las esquinas de la imagen se redondeen con la tarjeta */
+    display: flex;
+    flex-direction: column; /* Apila imagen, luego el cuerpo */
+    border: 1px solid var(--border-color); /* Borde sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover); /* Una sombra ligeramente más fuerte al pasar el ratón */
+    }
+
+/* Contenedor de la Imagen con Superposición */
+.project-image-wrapper {
+    position: relative;
+    width: 100%;
+    /* Relación de aspecto para la imagen, ej. 16:9. Ajustar según sea necesario. */
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 (altura / ancho * 100) */
+    overflow: hidden;
+    cursor: pointer; /* Indica que es clickeable */
+}
+
+.project-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+    transition: transform 0.3s ease;
+}
+
+.project-image-wrapper:hover .project-thumbnail {
+    transform: scale(1.05); /* Ligero zoom al pasar el ratón */
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Superposición oscura semitransparente */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+    .image-overlay i {
+        margin-bottom: 8px;
+        font-size: 1.5em;
+    }
+
+.project-image-wrapper:hover .image-overlay {
+    opacity: 1; /* Mostrar superposición al pasar el ratón */
+}
+
+/* Cuerpo de la Tarjeta (Contenido de Texto) */
+.project-card .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que el área de contenido ocupe el espacio disponible */
+}
+
+.project-title {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+}
+
+.project-description-short {
+    font-size: 0.95em;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que la descripción ocupe el espacio disponible antes de los enlaces */
+}
+
+/* Etiquetas de Pila Tecnológica */
+.project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Espacio entre etiquetas */
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    background-color: var(--secondary-color-light); /* Fondo más claro para etiquetas */
+    color: var(--secondary-color-dark); /* Texto más oscuro para etiquetas */
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    white-space: nowrap; /* Evita que las etiquetas salten de línea */
+}
+
+    .tech-tag i {
+        margin-right: 5px;
+    }
+
+/* Enlaces del Proyecto */
+.project-links {
+    display: flex;
+    gap: 15px; /* Espacio entre botones */
+    margin-top: auto; /* Empuja los enlaces a la parte inferior de la tarjeta */
+}
+
+.project-btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Estilos del Modal (Añadir a styles.css) --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Permanece en su lugar */
+    z-index: 1000; /* Se superpone a todo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilita el scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Negro con opacidad */
+    display: flex; /* Usar flexbox para centrar el contenido */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--card-bg-color);
+    margin: auto;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    max-width: 900px; /* Ancho máximo para el modal */
+    width: 90%; /* Ancho responsivo */
+    position: relative;
+    box-shadow: var(--shadow-heavy);
+    animation: fadeInScale 0.3s ease-out; /* Animación simple */
+    max-height: 90vh; /* Limitar altura para permitir scroll si el contenido es largo */
+    overflow-y: auto; /* Habilitar scroll para el contenido del modal si se desborda */
+}
+
+.close-button {
+    color: var(--text-color);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+    .close-button:hover,
+    .close-button:focus {
+        color: var(--primary-color); /* Resaltar al pasar el ratón */
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.modal-image {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Eliminar espacio extra debajo de la imagen */
+    margin-bottom: 20px;
+    border-radius: var(--border-radius); /* Coincidir con el border-radius de la tarjeta */
+}
+
+.modal-title {
+    font-size: 2.2em;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.modal-description {
+    font-size: 1em;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.modal-tech-stack {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.modal-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Prevenir scroll del body cuando el modal está abierto */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Keyframe para la animación del modal */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* --- Clases Generales para Centrar Contenido (asegurarse de que existan y funcionen) --- */
+.text-center {
+    text-align: center;
+}
+
+.content-block { /* Esta clase ya la tienes, asegura que tenga max-width y margin: 0 auto; */
+    max-width: 900px; /* Ajusta según tu preferencia de ancho máximo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Sección "Próximamente" (Blog) --- */
+.coming-soon-section {
+    background-color: var(--bg-section-cosmic);
+    border: 1px solid var(--border-cosmic-glow);
+    border-radius: var(--border-radius-cosmic);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-cosmic);
+    margin-top: var(--spacing-lg); /* Espacio superior */
+    margin-bottom: var(--spacing-lg); /* Espacio inferior */
+    text-align: center;
+}
+
+    .coming-soon-section .section-title {
+        color: var(--cosmic-star-white);
+        text-shadow: var(--glow-star);
+        font-size: 2.5em; /* Un poco más grande para destacar */
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .coming-soon-section .section-subtitle {
+        font-size: 1.2em;
+        color: var(--cosmic-nebula-cyan);
+        margin-bottom: var(--spacing-md);
+        text-shadow: var(--glow-cyan);
+    }
+
+.coming-soon-message {
+    font-size: 1.1em;
+    color: var(--cosmic-text-light);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl); /* Espacio adicional antes del contacto */
+}
+
+/* --- Sección de Contacto Directo en la Página del Blog --- */
+.blog-contact-section {
+    background-color: var(--bg-section-cosmic);
+    border: 1px solid var(--cosmic-ring-orange);
+    border-radius: var(--border-radius-cosmic);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-cosmic);
+    margin-bottom: var(--spacing-lg); /* Espacio antes del footer */
+    text-align: center;
+}
+
+/* Título secundario para la sección de contacto */
+.section-title-alt {
+    font-family: var(--font-heading-cosmic);
+    font-size: 2em;
+    color: var(--cosmic-ring-orange);
+    margin-bottom: var(--spacing-sm);
+    text-shadow: var(--glow-orange);
+}
+
+.blog-contact-section .section-subtitle {
+    font-size: 1.1em;
+    color: var(--cosmic-text-light);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2 o 3 columnas */
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    justify-items: center; /* Centra los items en su celda de la cuadrícula */
+}
+
+.contact-item {
+    background-color: rgba(173, 216, 230, 0.1); /* Fondo sutil para cada item */
+    border: 1px solid rgba(135, 206, 235, 0.3);
+    border-radius: var(--border-radius-cosmic);
+    padding: var(--spacing-md);
+    text-align: center;
+    color: var(--cosmic-text-light);
+    box-shadow: var(--shadow-cosmic);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido dentro del item */
+    justify-content: center;
+    min-height: 150px; /* Altura mínima para items consistentes */
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+    .contact-item:hover {
+        transform: translateY(-5px);
+        background-color: rgba(173, 216, 230, 0.2);
+        border-color: var(--cosmic-neon-pink);
+    }
+
+    .contact-item i {
+        font-size: 2.5em;
+        color: var(--cosmic-neon-pink);
+        margin-bottom: var(--spacing-xs);
+        text-shadow: var(--glow-pink);
+    }
+
+    .contact-item p {
+        font-size: 1em;
+        margin: 5px 0;
+    }
+
+    .contact-item a {
+        color: var(--cosmic-nebula-cyan);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+        .contact-item a:hover {
+            color: var(--cosmic-ring-orange);
+            text-shadow: var(--glow-orange);
+        }
+
+.visit-about-text {
+    font-size: 1em;
+    color: var(--cosmic-text-light);
+    margin-top: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.inline-link {
+    color: var(--cosmic-nebula-cyan);
+    text-decoration: underline;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+    .inline-link:hover {
+        color: var(--cosmic-neon-pink);
+        text-shadow: var(--glow-pink);
+    }
+
+/* --- Media Queries para responsividad de contacto --- */
+@media (max-width: 768px) {
+    .contact-details-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}

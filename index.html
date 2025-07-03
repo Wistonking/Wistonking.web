@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de desarrollador web – descubre los proyectos, habilidades y cómo contactar a Wistonking, Ingeniero en Computación especializado en JavaScript, Node y IA.">
+    <title>Wistonking | Desarrollador Web & IA</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">WK<span>.</span></a>
+            <nav id="nav-menu">
+                <a href="about.html" class="nav-link">Sobre mí</a>
+                <a href="projects.html" class="nav-link">Proyectos</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+                <button id="dark-toggle" aria-label="Alternar modo oscuro" class="nav-toggle-btn">🌓</button>
+            </nav>
+            <button id="hamburger" aria-label="Menú móvil" class="hamburger-btn">☰</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <img src="assets/img/Wistonking.png" alt="Wistonking: Ingeniero en Computación" class="hero-image">
+            <div class="hero-text">
+                <h1>¡Hola!, soy <span>Wistonking</span></h1>
+                <p class="tagline">Soy un programador versátil, apasionado por crear soluciones innovadoras utilizando una amplia gama de lenguajes y tecnologías. Mi objetivo es transformar ideas complejas en código eficiente y funcional.</p>
+                <p class="call-to-action-text">¡Explora mi trabajo y veamos cómo podemos colaborar!</p>
+                <div class="hero-buttons">
+                    <a href="assets/WistonkingCV.pdf" class="btn btn-primary" download>Descargar CV <i class="fas fa-download"></i></a>
+                    <a href="#contacto" class="btn btn-secondary">Contactar <i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padded skills-section">
+        <div class="container">
+            <h2 class="section-title">Mi <span></span> Habilidades</h2>
+            <p class="section-subtitle">
+                Explora las tecnologías y herramientas que domino, fundamentales en mi enfoque como desarrollador.
+            </p>
+
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <img src="assets/img/HTML5.png" alt="HTML5">
+                    <h3>HTML5</h3>
+                </div>
+
+                <div class="skill-card">
+                    <img src="assets/img/css3.png" alt="CSS3">
+                    <h3>CSS3</h3>
+                </div>
+
+                <div class="skill-card">
+                    <img src="assets/img/javascript.png" alt="JavaScript">
+                    <h3>JavaScript</h3>
+                </div>
+
+                <div class="skill-card">
+                    <img src="assets/img/React.png" alt="React">
+                    <h3>React</h3>
+                </div>
+
+                <div class="skill-card">
+                    <img src="assets/img/Node.js.png" alt="Node.js">
+                    <h3>Node.js</h3>
+                </div>
+
+                <div class="skill-card">
+                    <img src="assets/img/SQLite.png" alt="SQLite">
+                    <h3>SQLite</h3>
+                </div>
+
+                <div class="skill-card">
+                    <img src="assets/img/Git.png" alt="Git">
+                    <h3>Git</h3>
+                </div>
+
+                <div class="skill-card">
+                    <img src="assets/img/Phyton.png" alt="Python">
+                    <h3>Python</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta section-padded bg-gradient">
+        <div class="container text-center">
+            <h2>¿Listo para llevar tu proyecto al siguiente nivel?</h2>
+            <p class="cta-subtext">Descubre cómo mi experiencia puede impulsar tus ideas.</p>
+            <div class="cta-buttons">
+                <a href="projects.html" class="btn btn-primary btn-large">Explora Mis Proyectos</a>
+                <a href="#contacto" class="btn btn-secondary btn-large">¡Conversemos!</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact section-padded">
+        <div class="container">
+            <h2>Ponte en Contacto</h2>
+            <p class="section-description">¿Tienes una idea, un proyecto o simplemente quieres saludar? ¡No dudes en enviarme un mensaje!</p>
+            <form id="contact-form" action="https://formspree.io/f/mblywqek" method="POST" novalidate>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+                    <span class="error" id="errorNombre"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" required placeholder="tu.email@ejemplo.com">
+                    <span class="error" id="errorCorreo"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Describe tu proyecto o consulta aquí..."></textarea>
+                    <span class="error" id="errorMensaje"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary submit-btn">Enviar Mensaje</button>
+                <p class="success" id="successMsg"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Wistonking. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Wistonking" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/wiston-godoy-7a3859372?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BxNauRNHwT66BHNcQhHhPjg%3D%3D" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Wistonking Desarrollador Web & IA</title>
+    <meta name="description" content="Explora los proyectos de desarrollo web e inteligencia artificial de Wistonking, incluyendo sistemas full-stack, APIs y experiencias interactivas.">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoIF2RgVfK/d2rT+k4R7x2Q/g2/w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">WK<span>.</span></a>
+            <nav id="nav-menu">
+                <a href="about.html" class="nav-link">Sobre mí</a>
+                <a href="projects.html" class="nav-link">Proyectos</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="index.html#contacto" class="nav-link">Contacto</a>
+                <button id="dark-toggle" aria-label="Alternar modo oscuro" class="nav-toggle-btn">🌓</button>
+            </nav>
+            <button id="hamburger" aria-label="Menú móvil" class="hamburger-btn">☰</button>
+        </div>
+    </header>
+
+    <main class="container page-content">
+
+        <section class="section-padded projects-hero">
+            <h1 class="section-title">Mis <span>Proyectos Destacados</span></h1>
+            <p class="section-subtitle">
+                Aquí encontrarás una muestra de mi trabajo, donde combino mi pasión por el desarrollo web y la inteligencia artificial para crear soluciones eficientes.
+            </p>
+        </section>
+
+        <section class="section-padded projects-grid-section">
+            <div class="card-grid">
+
+                <article class="project-card" data-project-id="verde-vital">
+                    <div class="project-image-wrapper">
+                        <img src="assets/img/projects/VerdeVital.png" alt="Miniatura del Proyecto VerdeVital - E-commerce" class="project-thumbnail project-modal-trigger">
+                        <div class="image-overlay">
+                            <i class="fas fa-search-plus"></i> Ver Detalles
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="project-title">Sistema de Compra VerdeVital</h3>
+                        <p class="project-description-short">
+                            Plataforma e-commerce full-stack para productos naturales, construida con Node.js/Express.js y HTML5/CSS3/JavaScript (ES6+). Incluye autenticación, carrito persistente, gestión de stock y notificaciones por Telegram.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                            <span class="tech-tag"><i class="fab fa-js"></i> JS ES6+</span>
+                            <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                            <span class="tech-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                            <span class="tech-tag"><i class="fab fa-telegram-plane"></i> Telegram API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://wistonking.github.io/Wistonking/" target="_blank" rel="noopener" class="btn btn-secondary project-btn">Código <i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="cta section-padded bg-gradient">
+            <div class="container text-center">
+                <h2>¿Listo para un nuevo desafío?</h2>
+                <p class="cta-subtext">Dispuesto a colaborar en proyectos innovadores y aportar valor con mis conocimientos y habilidades.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#contacto" class="btn btn-primary btn-large">Contactar Ahora</a>
+                    <a href="assets/WistonkingCV.pdf" class="btn btn-secondary btn-large" download>Descargar CV <i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Wistonking. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Wistonking" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/wiston-godoy-7a3859372?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BxNauRNHwT66BHNcQhHhPjg%3D%3D" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img src="assets/img/projects/Verdevitall.png" alt="Imagen grande del proyecto" class="modal-image">
+            <h3 class="modal-title"></h3>
+            <p class="modal-description"></p>
+            <div class="modal-tech-stack"></div>
+            <div class="modal-links"></div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/project-modal.js" defer></script> </body>
+</html>
